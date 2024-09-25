@@ -1,26 +1,27 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HeaderSection />
+    <!-- header section strats -->
+    <router-view />
+    <FooterSection />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { useRouter } from 'vue-router'
+import HeaderSection from '@/components/Section/HeaderSection.vue'
+import FooterSection from '@/components/Section/FooterSection.vue'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    components: {
+        HeaderSection,
+        FooterSection,
+    },
+    setup() {
+        const router = useRouter()
+        return { router }
+    },
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+/* Your styles here */
 </style>
